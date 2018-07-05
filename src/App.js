@@ -17,11 +17,11 @@ class App extends Component {
     return (
       <div className="App">
         <Route exact path="/" render={()=>(
-       <FormComponent onSubmitClick= {data => this.setState({data})}/>
-      )}/>
-      <Route exact path="/profile" render = {({history}) =>
-        <ProfileComponent info = {this.state.data}/>
-      }/> 
+          <FormComponent onSubmitClick= {data => this.setState({data})}/>
+        )}/>
+        <Route exact path="/profile" render = {({history}) =>
+          <ProfileComponent info = {this.state.data}/>
+        }/>
       </div>
       
     );
