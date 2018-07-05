@@ -20,7 +20,6 @@ class FormComponent extends Component{
         })
     }
     handleSubmit = (e) =>{
-        e.preventDefault()
         let data = {
             name : this.state.name,
             email : this.state.email
@@ -34,7 +33,7 @@ class FormComponent extends Component{
             <div className="form">
                 <input type="text" placeholder="Username" name="un" value = {this.state.name} onChange = {(event) => this.upadateName(event.target.value)}/>
                 <input type="email" placeholder = "Enter your email" value = {this.state.email} onChange = {(event) => this.upadateEmail(event.target.value)} />
-                <Link onClick ={this.handleSubmit} className = "submit-button" to="/profile"> submit </Link>
+                <Link onClick = {this.handleSubmit} className = "submit-button" to="/profile" > submit </Link>
             </div>
             </div>
         )
