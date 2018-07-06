@@ -1,24 +1,41 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom'
+
+const closeBtnStyle = {
+    
+        display: "block",
+        width: "60px",
+        height: "60px",
+        backgroundImage: "url('./icons/back-alt-512.png')",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "30px",
+        fontSize: "0"
+    
+}
 
 // Used inline css just to see the effect over it
 export default class ProfileComponent extends Component{
    
     render(){
         return(
-            <aside class="profile-card">
+            
+            <aside className="profile-card">
+            
                 <header>
                     <a href="#">
                         <img src="http://victory-design.ru/sandbox/codepen/profile_card/avatar.svg" />
+                        
                     </a>
                         <h1>{this.props.info.name}</h1>
-                        <h2>{this.props.info.email}</h2>
+                        <h2>{this.props.info.email}</h2>    
                     </header>          
-                    <div class="profile-bio">
+                    <div className="profile-bio">
                         <p>Even when everything is perfect, you can always make it better. Break barriers in your head, create something crazy and don't forget Code is Poetry...</p>
                     </div>
-                    <ul class="profile-social-links">
+                    <ul className="profile-social-links">
                         <li>
-                            <a href="#">
+                            <a href="https://facebook.com/heartbuster.rpp/heartbuster.rpp">
                                 <svg viewBox="0 0 24 24">
                                     <path fill="#3b5998" d="M17,2V2H17V6H15C14.31,6 14,6.81 14,7.5V10H14L17,10V14H14V22H10V14H7V10H10V6A4,4 0 0,1 14,2H17Z" />
                                 </svg>
@@ -41,7 +58,9 @@ export default class ProfileComponent extends Component{
                             </a>
                         </li>
                     </ul>
+                    
                 </aside>
+                
 
         );
     }
