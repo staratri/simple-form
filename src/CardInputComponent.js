@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types'
 
 export default class CardInputComponent extends Component {
 
@@ -8,7 +9,6 @@ export default class CardInputComponent extends Component {
         date : '',
         month : '',
     }
-
     upadateHeadLine = (val) =>{
         this.setState({
             headLine : val
@@ -32,8 +32,6 @@ export default class CardInputComponent extends Component {
     UpdateReflectorState = (state) =>{
         this.props.dataFilling(state)
     }
-
-
     render(){
         return (
             <div className= "shade">
@@ -58,10 +56,12 @@ export default class CardInputComponent extends Component {
                                 <p className="wipeout">
                                     <input type="submit" value="Send" onClick = {() => this.UpdateReflectorState(this.state)}/>
                                 </p> 
-                                
                         </div>
                 </div>
             </div>
         );
     }
+}
+CardInputComponent.propTypes = {
+    dataFilling : PropTypes.func.isRequired
 }
