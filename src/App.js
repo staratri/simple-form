@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import FormComponent from './FormComponent'
 import {Route} from 'react-router-dom'
 import ProfileComponent from './ProfileComponent'
-// import ReflectorComponent from './ReflectorComponent';
+import ReflectorComponent from './ReflectorComponent';
 
 
 class App extends Component {
@@ -23,6 +23,9 @@ class App extends Component {
         )}/>
         <Route exact path="/profile" render = {({history}) =>
           <ProfileComponent info = {this.state.data}/>
+        }/>
+        <Route exact path="/reflector" render = {({history}) =>
+          <ReflectorComponent />
         }/>
         
       </div>

@@ -29,14 +29,12 @@ export default class CardInputComponent extends Component {
             month : val
         })
     }
-
-    handleSubmit = ()=> {
-        console.log('this one',this.state)
-        // this.props.dataFilling(this.state)
+    UpdateReflectorState = (state) =>{
+        this.props.dataFilling(state)
     }
 
-    render(){
 
+    render(){
         return (
             <div className= "shade">
                 <div className= "blackboard">
@@ -57,9 +55,10 @@ export default class CardInputComponent extends Component {
                                         <label>Month: </label>
                                         <input type="text" value= {this.state.month}  onChange =  {(event) => this.upadateMonth(event.target.value)}/>
                                 </p>
-                                <p className= "wipeout">
-                                        <input type="submit" value="Send" onClick={console.log('hey')}/>
-                                </p>
+                                <p className="wipeout">
+                                    <input type="submit" value="Send" onClick = {() => this.UpdateReflectorState(this.state)}/>
+                                </p> 
+                                
                         </div>
                 </div>
             </div>

@@ -1,25 +1,14 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom'
 
-const closeBtnStyle = {
-    
-        display: "block",
-        width: "60px",
-        height: "60px",
-        backgroundImage: "url('./icons/back-alt-512.png')",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "30px",
-        fontSize: "0"
-    
-}
+import PropTypes from 'prop-types'
+
+
 
 // Used inline css just to see the effect over it
 export default class ProfileComponent extends Component{
-   
+
     render(){
         return(
-            
             <aside className="profile-card">
             
                 <header>
@@ -60,8 +49,9 @@ export default class ProfileComponent extends Component{
                     </ul>
                     
                 </aside>
-                
-
         );
     }
+}
+ProfileComponent.propTypes = {
+    info : PropTypes.object.isRequired
 }
