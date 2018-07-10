@@ -3,6 +3,7 @@ import FormComponent from './FormComponent'
 import {Route} from 'react-router-dom'
 import ProfileComponent from './ProfileComponent'
 import ReflectorComponent from './ReflectorComponent';
+import { Redirect } from 'react-router-dom';
 
 
 class App extends Component {
@@ -11,7 +12,13 @@ class App extends Component {
     data :{
       name : '',
       email : ''
-    }
+    },
+    auth : false
+  }
+  updateState = (data) =>{
+    this.setState(
+      {data : data}
+    )
   }
   
   render() {
@@ -19,11 +26,14 @@ class App extends Component {
     return (
       <div className="App">
         <Route exact path="/" render={()=>(
-          <FormComponent onSubmitClick= {data => this.setState({data})}/>
+          <FormComponent onSubmitClick= {this.updateState}/>
         )}/>
-        <Route exact path="/profile" render = {({history}) =>
-          <ProfileComponent info = {this.state.data}/>
-        }/>
+        {
+          this.state.auth === true && <Route exact path="/profile" render = {({history}) =>
+            <ProfileComponent info = {this.state.data}/>
+          }/>
+        }
+        
         <Route exact path="/reflector" render = {({history}) =>
           <ReflectorComponent />
         }/>

@@ -65,3 +65,7 @@ export default class CardInputComponent extends Component {
 CardInputComponent.propTypes = {
     dataFilling : PropTypes.func.isRequired
 }
+
+CardInputComponent.defaultProps = {
+    
+}
